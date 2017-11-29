@@ -20,7 +20,7 @@ func (p *Parser) CleanAddress(detailAddress []byte) string {
 	}
 
 	if err := json.Unmarshal(detailAddress, &data); err != nil {
-		log.Println("Error lho ", err)
+		log.Println(err)
 		return ""
 	}
 
