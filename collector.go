@@ -1,4 +1,4 @@
-package parser
+package address
 
 import (
 	"encoding/csv"
@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func (p *Parser) LoadStopWords() {
+func (m *Module) LoadStopWords() {
 	generalPath := "files/stopwords/general.csv"
 	provincePath := "files/stopwords/export-ws_province.csv"
 	cityPath := "files/stopwords/export-ws_city.csv"

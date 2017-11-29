@@ -1,4 +1,4 @@
-package parser
+package address
 
 import (
 	"encoding/json"
@@ -19,8 +19,7 @@ type AddressDetail struct {
 
 func TestCleanAddress(t *testing.T) {
 
-	p := New()
-
+	module := New()
 	inputJson := `[
 		{
 			"city_id":200,
@@ -127,7 +126,7 @@ func TestCleanAddress(t *testing.T) {
 		if err != nil {
 			log.Println(err)
 		}
-		assert.Equal(t, output[i], p.CleanAddress(addressJson))
+		assert.Equal(t, output[i], module.CleanAddress(addressJson))
 	}
 }
 

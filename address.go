@@ -1,11 +1,11 @@
-package parser
+package address
 
 import (
 	"regexp"
 )
 
-func New() *Parser {
-	parser := &Parser{
+func New() *Module {
+	m := &Module{
 		special:           regexp.MustCompile(`[_+-.:,!@#$%^&*();\\/|<>"'?=]`),
 		ilegalOctalNumber: regexp.MustCompile(` 0+`),
 		newLine:           regexp.MustCompile("\\[.*?]"),
@@ -14,7 +14,7 @@ func New() *Parser {
 	city = make(map[string]string)
 	district = make(map[string]string)
 
-	parser.LoadStopWords()
+	m.LoadStopWords()
 
-	return parser
+	return m
 }

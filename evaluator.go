@@ -1,4 +1,4 @@
-package parser
+package address
 
 import (
 	"encoding/json"
@@ -8,7 +8,7 @@ import (
 	"text/scanner"
 )
 
-func (p *Parser) CleanAddress(detailAddress []byte) string {
+func (m *Module) CleanAddress(detailAddress []byte) string {
 	var result []string
 
 	var data struct {
@@ -28,9 +28,9 @@ func (p *Parser) CleanAddress(detailAddress []byte) string {
 	provinceParam := fmt.Sprintf("%d", data.ProvinceID)
 	cityParam := fmt.Sprintf("%d", data.CityID)
 	districtParam := fmt.Sprintf("%d", data.DistrictID)
-	addr = p.newLine.ReplaceAllString(addr, " ")
-	addr = p.special.ReplaceAllString(addr, " ")
-	addr = p.ilegalOctalNumber.ReplaceAllString(addr, " ")
+	addr = m.newLine.ReplaceAllString(addr, " ")
+	addr = m.special.ReplaceAllString(addr, " ")
+	addr = m.ilegalOctalNumber.ReplaceAllString(addr, " ")
 	addr = strings.ToLower(addr)
 
 	// remove district,city,province name

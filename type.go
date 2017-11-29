@@ -1,7 +1,7 @@
-package parser
+package address
 
 import "regexp"
 
-type Parser struct {
+type Module struct {
 	special, ilegalOctalNumber, newLine *regexp.Regexp
 }

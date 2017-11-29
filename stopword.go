@@ -1,4 +1,4 @@
-package parser
+package address
 
 var address = map[string]string{
 	"jalan":       " ",
