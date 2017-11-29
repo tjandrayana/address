@@ -7,10 +7,10 @@ import (
 )
 
 func (p *Parser) LoadStopWords() {
-	generalPath := "../files/stopwords/general.csv"
-	provincePath := "../files/stopwords/export-ws_province.csv"
-	cityPath := "../files/stopwords/export-ws_city.csv"
-	districtPath := "../files/stopwords/export-ws_district.csv"
+	generalPath := "files/stopwords/general.csv"
+	provincePath := "files/stopwords/export-ws_province.csv"
+	cityPath := "files/stopwords/export-ws_city.csv"
+	districtPath := "files/stopwords/export-ws_district.csv"
 
 	okGeneral := ReadStopAddress(generalPath, "general")
 	if !okGeneral {
